@@ -25,6 +25,8 @@ import { Wrapper as WrapperPopper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import Menu from '~/components/Popper/Menu';
 import { faMessage, faUser } from '@fortawesome/free-regular-svg-icons';
+import { InboxIcon } from '~/components/Icons';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -153,7 +155,7 @@ function Header() {
                             </Tippy>
                             <Tippy delay={[0, 200]} placement="bottom" content="Inbox">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faMessage} />
+                                    <InboxIcon />
                                 </button>
                             </Tippy>
                         </>
@@ -165,10 +167,11 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 src="https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-giso/5ffe9997e126458bc1e6142da08ba5c4~c5_720x720.jpeg?lk3s=a5d48078&x-expires=1709283600&x-signature=B7QiK3X2SEdz43k%2FeEAAMKar5eA%3D"
                                 className={cx('user-avatar')}
                                 alt="Truong Hoang Nhan"
+                                // fallback="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/4333fc1ca041b0cdc74ce535ec3b0ee4~c5_100x100.jpeg?lk3s=a5d48078&x-expires=1709211600&x-signature=gjaMRIFhg65QC2uFCOk%2BCZzVwbc%3D"
                             />
                         ) : (
                             <>
