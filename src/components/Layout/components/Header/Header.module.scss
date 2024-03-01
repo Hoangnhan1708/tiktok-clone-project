@@ -19,82 +19,6 @@
     justify-content: space-between;
 }
 
-.search,
-.search-result {
-    width: 361px;
-}
-
-.search {
-    position: relative;
-    display: flex;
-
-    height: 46px;
-    padding-left: 16px;
-    background-color: #f1f1f2;
-    border: 1.5px solid transparent;
-    border-radius: var(--search-border-radius);
-
-    input {
-        flex: 1;
-        height: 100%;
-        color: var(--black);
-        font-size: 1.6rem;
-        caret-color: var(--primary);
-        background-color: transparent;
-    }
-
-    input:not(:placeholder-shown) ~ .search-btn {
-        color: rgba(22, 24, 35, 0.75);
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        height: calc(var(--search-height) - var(--search-top-spacer) * 2);
-        width: 1px;
-        top: var(--search-top-spacer);
-        right: var(--search-btn-width);
-        background-color: rgba(22, 24, 35, 0.12);
-    }
-
-    &:focus-within {
-        border-color: rgba(22, 24, 35, 0.2);
-    }
-}
-
-.search-title {
-    padding: 5px 12px;
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: rgba(22, 24, 35, 0.5);
-}
-
-.clear,
-.spinner {
-    position: absolute;
-    right: calc(var(--search-btn-width) + 16px);
-    top: 50%;
-    color: rgba(22, 24, 35, 0.34);
-    transform: translateY(-50%);
-}
-
-.search-btn {
-    width: var(--search-btn-width);
-    height: 100%;
-    color: #a7a7ab;
-    font-size: 1.8rem;
-    border-top-right-radius: var(--search-border-radius);
-    border-bottom-right-radius: var(--search-border-radius);
-
-    &:hover {
-        background-color: rgba(22, 24, 35, 0.03);
-    }
-
-    &:active {
-        background-color: rgba(22, 24, 35, 0.06);
-    }
-}
-
 // Actions
 
 .actions {
@@ -103,6 +27,7 @@
 }
 
 .action-btn {
+    position: relative;
     font-size: 2.6rem;
     color: #161823;
     background-color: transparent;
@@ -124,4 +49,19 @@
     background-color: transparent;
     padding: 4px 8px;
     cursor: pointer;
+}
+
+// Badge
+.badge {
+    position: absolute;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    border-radius: 16px;
+    top: -2px;
+    right: -5px;
+    width: 28px;
+    height: 20px;
+    background-color: var(--primary);
 }
